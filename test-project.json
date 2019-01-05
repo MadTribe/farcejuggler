@@ -1,0 +1,30 @@
+{
+    "startDate":"2018-12-19",
+    "workstreams" : [
+          {
+            "tasks":[
+                {
+                  "name":"task1",
+                  "duration":"6hours"
+                },
+              {
+                "name":"task2",
+                "duration":"6hours"
+              },
+              {
+                "name":"task3",
+                "duration":"6hours"
+              },
+              {
+                "name":"task4",
+                "duration":"6hours"
+              },
+              {
+                "name":"task5",
+                "duration":"6hours"
+              }
+            ]
+
+          }
+     ]
+}

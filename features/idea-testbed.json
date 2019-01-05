@@ -1,0 +1,61 @@
+{
+    "startDate":"2018-12-19",
+    "schedules" : {
+      "weekends": {
+        "class": "DayInterval",
+        "constructor-params": [
+          6 // Saturday
+        ],
+        "modify" : [
+          {"op" : "add",
+            "schedule" : {
+            "class": "DayInterval",
+            "constructor-params": [7] // Sunday
+          }
+        }
+        ]
+      },
+      "default-work-week": {
+        "class": "DailyIntervalSequence",
+        "constructor-params": [ // One day 9am to 5pm
+          9,
+          0,
+          17,
+          0
+        ],
+        "modify" : [
+            { "op":"subtract",
+              "schedule-called" :"weekends"
+            }
+      ]
+    },
+    "workstreams" : [
+
+
+          {
+            "tasks":[
+                {
+                  "name":"task1",
+                  "duration":"6hours"
+                },
+              {
+                "name":"task2",
+                "duration":"6hours"
+              },
+              {
+                "name":"task3",
+                "duration":"6hours"
+              },
+              {
+                "name":"task4",
+                "duration":"6hours"
+              },
+              {
+                "name":"task5",
+                "duration":"6hours"
+              }
+            ]
+
+          }
+     ]
+}
