@@ -37,7 +37,9 @@ public class Interval {
     }
 
     public Interval[] add(Interval interval2) {
-        if (contains(interval2.getStart())){
+        if(contains(interval2.getStart()) && contains(interval2.getEnd())) {
+            return new Interval[]{this};
+        } else if (contains(interval2.getStart())){
             return new Interval[]{ new Interval(this.start, interval2.end)};
         } else if (contains(interval2.getEnd())) {
             return new Interval[]{ new Interval(interval2.start, this.end)};
@@ -47,6 +49,23 @@ public class Interval {
             } else {
                 return new Interval[]{interval2, this};
             }
+        }
+    }
+
+    public Interval[] remove(Interval interval2) {
+        if(contains(interval2.getStart()) && contains(interval2.getEnd())) {
+            return new Interval[]{new Interval(start, interval2.start),
+                                    new Interval(interval2.end, this.end)};
+        } else if (contains(interval2.getStart())) {
+            return new Interval[]{
+                    new Interval(this.start, interval2.start)
+            };
+        } else if (contains(interval2.getEnd())) {
+            return new Interval[]{
+                    new Interval(interval2.end, this.end)
+            };
+        } else {
+            return new Interval[]{this};
         }
     }
 }
